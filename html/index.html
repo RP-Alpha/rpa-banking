@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RP-Alpha Banking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="app" class="hidden">
+        <div class="bank-container">
+            <header>
+                <div class="logo">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span>FIVEM BANK</span>
+                </div>
+                <div class="user-info">
+                    <span id="player-name">John Doe</span>
+                </div>
+            </header>
+
+            <main>
+                <div class="balance-card">
+                    <div class="card-label">Total Balance</div>
+                    <div class="card-amount">$<span id="balance-amount">0</span></div>
+                </div>
+
+                <div class="actions">
+                    <button class="action-btn" onclick="openModal('deposit')">
+                        <i class="fa-solid fa-arrow-down"></i>
+                        Deposit
+                    </button>
+                    <button class="action-btn" onclick="openModal('withdraw')">
+                        <i class="fa-solid fa-arrow-up"></i>
+                        Withdraw
+                    </button>
+                </div>
+
+                <div class="transactions">
+                    <h3>Recent Transactions</h3>
+                    <ul id="transaction-list">
+                        <!-- Populated by JS -->
+                        <li>
+                            <span class="t-type">Initial Deposit</span>
+                            <span class="t-amount positive">+$500</span>
+                        </li>
+                    </ul>
+                </div>
+            </main>
+
+            <footer>
+                <button class="close-btn" onclick="closeBank()">Close</button>
+            </footer>
+        </div>
+
+        <!-- Modal -->
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+                <h3 id="modal-title">Deposit</h3>
+                <input type="number" id="amount-input" placeholder="Amount">
+                <div class="modal-actions">
+                    <button onclick="closeModal()">Cancel</button>
+                    <button class="confirm-btn" onclick="submitTransaction()">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
