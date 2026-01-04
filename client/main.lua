@@ -1,13 +1,13 @@
 local display = false
 
-RegisterNetEvent('rpa-banking:client:openBank', function(data) {
+RegisterNetEvent('rpa-banking:client:openBank', function(data)
     SetNuiFocus(true, true)
     display = true
     SendNUIMessage({
         action = 'openBox',
         data = data
     })
-})
+end)
 
 RegisterNUICallback('close', function(data, cb) {
     SetNuiFocus(false, false)
